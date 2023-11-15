@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  frontend-container:
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+    restart: always
+    ports:
+      - "3002:3000"
+
+  sonarqube-container:
+    image: sonarqube:latest
+    restart: always
+    ports:
+      - "9000:9000"
+ 
